@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pile ou Face en Ligne — Lancer de Pièce Gratuit | Coin Flip</title>
+<meta name="description" content="Tirage à pile ou face en ligne, gratuit et instantané. Générateur aléatoire équitable pour trancher rapidement, sans inscription.">
+<link rel="canonical" href="https://maelysbussac-ship-it.github.io/">
+<meta property="og:title" content="Pile ou Face en Ligne — Gratuit et Instantané">
+<meta property="og:description" content="Tirage à pile ou face en ligne, gratuit, équitable, sans inscription.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://maelysbussac-ship-it.github.io/#webapp",
+      "name": "Pile ou Face en Ligne",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+      "description": "Outil gratuit de tirage a pile ou face aleatoire et equitable."
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Le tirage à pile ou face en ligne est-il vraiment aléatoire ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Oui, chaque tirage utilise un générateur aléatoire avec exactement 50% de chances pour chaque face, comme une vraie pièce." }
+        },
+        {
+          "@type": "Question",
+          "name": "Puis-je faire plusieurs tirages d'affilée ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Oui, cliquez autant de fois que nécessaire sur le bouton, ou utilisez le mode 'plusieurs lancers' pour obtenir une série de résultats d'un coup." }
+        },
+        {
+          "@type": "Question",
+          "name": "Est-ce gratuit et sans inscription ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Oui, entièrement gratuit, sans compte à créer, et tout se passe directement dans votre navigateur." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #1c2b22; --ink-soft: #5b6b62; --ink-mute: #8a978d;
+    --paper: #faf8f4; --card: #eef4fb; --card-border: #d7e6f5;
+    --accent: #b06e2c; --accent-dark: #95571f; --accent-soft: rgba(176,110,44,0.10);
+    --line: #e5e0d5;
+    --heads: #2f6e52; --tails: #4a6b8a;
+  }
+  body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; background: var(--paper); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 20px; }
+  header { background: #fff; border-bottom: 1px solid var(--line); padding: 16px 0; }
+  .header-row { display: flex; align-items: center; justify-content: space-between; }
+  .logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.05rem; }
+  .logo-icon { width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, var(--heads), var(--tails)); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
+  .lang-switch button { background: none; border: 1px solid var(--line); border-radius: 8px; padding: 5px 12px; font-weight: 600; font-size: 0.8rem; color: var(--ink-soft); cursor: pointer; }
+  .lang-switch button.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+  .ad-slot { background: #f1ede4; border: 1px dashed #d8d2c4; border-radius: 10px; text-align: center; padding: 14px; font-size: 0.7rem; color: var(--ink-mute); letter-spacing: 0.05em; text-transform: uppercase; margin: 24px 0; }
+
+  .hero { text-align: center; padding: 44px 0 10px; }
+  .badge { display: inline-flex; align-items: center; gap: 6px; background: var(--accent-soft); color: var(--accent-dark); border: 1px solid var(--card-border); border-radius: 999px; padding: 6px 14px; font-size: 0.78rem; font-weight: 700; margin-bottom: 18px; }
+  h1 { font-size: 2.3rem; font-weight: 800; letter-spacing: -0.02em; margin: 0 auto 10px; }
+  .lede { color: var(--ink-soft); font-size: 1rem; max-width: 480px; margin: 0 auto; }
+
+  .coin-zone { display: flex; flex-direction: column; align-items: center; padding: 40px 0; }
+  .coin {
+    width: 180px; height: 180px; border-radius: 50%; position: relative;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2.4rem; font-weight: 800; color: #fff; user-select: none;
+    box-shadow: 0 12px 30px -8px rgba(28,43,34,0.25);
+    transition: transform 0.6s cubic-bezier(.2,.8,.3,1.2);
+    background: linear-gradient(135deg, var(--heads), var(--tails));
+  }
+  .coin.flipping { animation: spin 0.6s linear; }
+  @keyframes spin { from { transform: rotateY(0deg); } to { transform: rotateY(1800deg); } }
+  .result-label { margin-top: 22px; font-size: 1.1rem; font-weight: 700; color: var(--ink); min-height: 1.6em; }
+  .btn { background: var(--accent); color: #fff; border: none; border-radius: 12px; padding: 14px 30px; font-weight: 700; font-size: 1rem; cursor: pointer; margin-top: 20px; transition: background 0.15s; }
+  .btn:hover { background: var(--accent-dark); }
+  .btn-secondary { background: #fff; color: var(--ink); border: 1px solid var(--card-border); border-radius: 10px; padding: 9px 18px; font-weight: 600; font-size: 0.85rem; cursor: pointer; margin-top: 14px; }
+
+  .multi-card { background: var(--card); border: 1px solid var(--card-border); border-radius: 16px; padding: 22px; margin: 28px 0; text-align: center; }
+  .multi-card h2 { font-size: 1.05rem; margin-bottom: 12px; }
+  .multi-row { display: flex; gap: 10px; justify-content: center; align-items: center; flex-wrap: wrap; }
+  input[type=number] { border: 1px solid var(--card-border); border-radius: 8px; padding: 8px 10px; font-family: inherit; font-size: 0.9rem; width: 80px; text-align: center; }
+  #multi-results { margin-top: 16px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.95rem; color: var(--ink-soft); word-break: break-word; }
+  .stats { margin-top: 10px; font-size: 0.85rem; color: var(--ink-mute); }
+
+  .faq { margin: 44px 0; }
+  .faq h2 { font-size: 1.35rem; margin-bottom: 16px; }
+  .faq-item { border-bottom: 1px solid var(--line); padding: 14px 0; }
+  .faq-item h3 { font-size: 0.98rem; margin-bottom: 6px; }
+  .faq-item p { color: var(--ink-soft); font-size: 0.9rem; }
+
+  footer { background: #fff; border-top: 1px solid var(--line); padding: 32px 0; margin-top: 36px; }
+  .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 22px; font-size: 0.85rem; color: var(--ink-soft); }
+  @media (max-width: 700px) { .footer-grid { grid-template-columns: 1fr; } }
+  .footer-grid h4 { color: var(--ink); font-size: 0.9rem; margin-bottom: 10px; }
+  .footer-grid ul { list-style: none; }
+  .legal-link { color: var(--accent-dark); text-decoration: underline; cursor: pointer; background: none; border: none; font: inherit; padding: 0; }
+  .disclaimer { color: var(--ink-mute); font-size: 0.76rem; margin-top: 12px; }
+
+  #legal-modal { display: none; position: fixed; inset: 0; background: rgba(28,43,34,0.5); align-items: center; justify-content: center; padding: 16px; z-index: 999; }
+  #legal-modal .box { background: #fff; border-radius: 16px; max-width: 620px; width: 100%; max-height: 80vh; overflow-y: auto; padding: 26px; position: relative; }
+  #legal-modal h2 { font-size: 1.25rem; margin-bottom: 14px; }
+  #legal-modal h3 { font-size: 0.98rem; margin: 14px 0 5px; }
+  #legal-modal p { font-size: 0.88rem; color: var(--ink-soft); margin-bottom: 9px; }
+  #legal-modal .close { position: absolute; top: 14px; right: 16px; background: none; border: none; font-size: 1.2rem; cursor: pointer; color: var(--ink-mute); }
+
+  [data-lang-en] { display: none; }
+  html[data-lang="en"] [data-lang-fr] { display: none; }
+  html[data-lang="en"] [data-lang-en] { display: initial; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap header-row">
+    <div class="logo"><span class="logo-icon">🪙</span> CoinToss<span style="color:var(--accent)">.</span></div>
+    <div class="lang-switch">
+      <button id="btn-fr" class="active" onclick="setLang('fr')">FR</button>
+      <button id="btn-en" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="ad-slot">Publicité / Advertisement — AdSense (bannière responsive)</div>
+
+  <section class="hero">
+    <span class="badge">⚡ <span data-lang-fr>100% aléatoire, gratuit, sans inscription</span><span data-lang-en>100% random, free, no sign-up</span></span>
+    <h1><span data-lang-fr>Pile ou Face en Ligne</span><span data-lang-en>Flip a Coin Online</span></h1>
+    <p class="lede"><span data-lang-fr>Un clic, une décision. Tirage équitable et instantané.</span><span data-lang-en>One click, one decision. Fair and instant flip.</span></p>
+  </section>
+
+  <div class="coin-zone">
+    <div class="coin" id="coin">🪙</div>
+    <div class="result-label" id="result-label">&nbsp;</div>
+    <button class="btn" onclick="flipCoin()"><span data-lang-fr>Lancer la pièce</span><span data-lang-en>Flip the coin</span></button>
+    <div class="stats" id="stats"></div>
+  </div>
+
+  <div class="multi-card">
+    <h2><span data-lang-fr>Plusieurs tirages d'un coup</span><span data-lang-en>Multiple flips at once</span></h2>
+    <div class="multi-row">
+      <input type="number" id="multi-count" value="10" min="1" max="500">
+      <button class="btn-secondary" onclick="multiFlip()"><span data-lang-fr>Lancer plusieurs fois</span><span data-lang-en>Flip multiple times</span></button>
+    </div>
+    <div id="multi-results"></div>
+  </div>
+
+  <div class="ad-slot">Publicité / Advertisement — AdSense (native in-content)</div>
+
+  <section class="faq">
+    <h2 data-lang-fr>Questions fréquentes</h2><h2 data-lang-en>Frequently asked questions</h2>
+    <div class="faq-item">
+      <h3 data-lang-fr>Le tirage est-il vraiment aléatoire ?</h3><h3 data-lang-en>Is the flip truly random?</h3>
+      <p data-lang-fr>Oui, chaque tirage a exactement 50% de chances pour chaque face, comme une vraie pièce.</p>
+      <p data-lang-en>Yes, each flip has exactly a 50% chance for each side, just like a real coin.</p>
+    </div>
+    <div class="faq-item">
+      <h3 data-lang-fr>Puis-je faire plusieurs tirages d'affilée ?</h3><h3 data-lang-en>Can I flip multiple times in a row?</h3>
+      <p data-lang-fr>Oui, cliquez autant de fois que nécessaire, ou utilisez le mode "plusieurs tirages" pour une série instantanée.</p>
+      <p data-lang-en>Yes, click as many times as needed, or use "multiple flips" for an instant series.</p>
+    </div>
+    <div class="faq-item">
+      <h3 data-lang-fr>Est-ce gratuit et sans inscription ?</h3><h3 data-lang-en>Is it free with no sign-up?</h3>
+      <p data-lang-fr>Oui, entièrement gratuit, aucun compte à créer, tout se passe dans votre navigateur.</p>
+      <p data-lang-en>Yes, completely free, no account needed, everything runs in your browser.</p>
+    </div>
+  </section>
+
+  <div class="ad-slot">Publicité / Advertisement — AdSense (bannière basse)</div>
+</main>
+
+<footer>
+  <div class="wrap footer-grid">
+    <div>
+      <h4>CoinToss</h4>
+      <p data-lang-fr>Outil gratuit et indépendant de tirage à pile ou face. Aucune donnée n'est envoyée à un serveur.</p>
+      <p data-lang-en>Free, independent coin flip tool. No data is ever sent to a server.</p>
+      <p class="disclaimer" data-lang-fr>Outil ludique à but pratique, ne se substitue pas à un générateur certifié pour un usage réglementé (jeux d'argent, tirages officiels).</p>
+      <p class="disclaimer" data-lang-en>Casual practical tool, not a substitute for a certified generator for regulated use (gambling, official draws).</p>
+    </div>
+    <div>
+      <h4 data-lang-fr>Légal</h4><h4 data-lang-en>Legal</h4>
+      <ul><li><button class="legal-link" onclick="toggleLegal()" data-lang-fr>Mentions légales &amp; RGPD</button><button class="legal-link" onclick="toggleLegal()" data-lang-en>Legal &amp; Privacy</button></li></ul>
+    </div>
+    <div>
+      <h4 data-lang-fr>Langues</h4><h4 data-lang-en>Languages</h4>
+      <p>Français · English</p>
+      <p style="margin-top:10px;">© 2026 CoinToss</p>
+    </div>
+  </div>
+</footer>
+
+<div id="legal-modal">
+  <div class="box">
+    <button class="close" onclick="toggleLegal()">✕</button>
+    <h2 data-lang-fr>Mentions Légales &amp; Politique de Confidentialité (RGPD)</h2>
+    <h2 data-lang-en>Legal Notice &amp; Privacy Policy (GDPR)</h2>
+    <h3 data-lang-fr>Éditeur</h3><h3 data-lang-en>Publisher</h3>
+    <p data-lang-fr>Outil indépendant, édité à titre non professionnel.</p>
+    <p data-lang-en>Independent tool, published on a non-professional basis.</p>
+    <h3 data-lang-fr>Données personnelles</h3><h3 data-lang-en>Personal data</h3>
+    <p data-lang-fr>Ce site ne collecte aucune donnée personnelle. Aucun formulaire, aucun compte.</p>
+    <p data-lang-en>This site collects no personal data. No forms, no accounts.</p>
+    <h3 data-lang-fr>Cookies &amp; publicité</h3><h3 data-lang-en>Cookies &amp; advertising</h3>
+    <p data-lang-fr>Ce site peut afficher des publicités Google AdSense utilisant des cookies pour la personnalisation et la mesure d'audience. Gérez vos préférences via <a href="https://adssettings.google.com" target="_blank" rel="noopener">adssettings.google.com</a>.</p>
+    <p data-lang-en>This site may show Google AdSense ads using cookies for personalization and measurement. Manage preferences at <a href="https://adssettings.google.com" target="_blank" rel="noopener">adssettings.google.com</a>.</p>
+    <h3 data-lang-fr>Vos droits (RGPD)</h3><h3 data-lang-en>Your rights (GDPR)</h3>
+    <p data-lang-fr>Vous disposez d'un droit d'accès, de rectification et d'opposition concernant toute donnée collectée via les cookies publicitaires.</p>
+    <p data-lang-en>You have the right to access, rectify, and object regarding any data collected via advertising cookies.</p>
+  </div>
+</div>
+
+<script>
+function setLang(lang) {
+  document.documentElement.setAttribute('data-lang', lang);
+  document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+}
+function toggleLegal() {
+  const m = document.getElementById('legal-modal');
+  m.style.display = (m.style.display === 'flex') ? 'none' : 'flex';
+}
+let heads = 0, tails = 0;
+function flipCoin() {
+  const coin = document.getElementById('coin');
+  const label = document.getElementById('result-label');
+  const isEn = document.documentElement.getAttribute('data-lang') === 'en';
+  coin.classList.remove('flipping');
+  void coin.offsetWidth;
+  coin.classList.add('flipping');
+  const isHeads = Math.random() < 0.5;
+  setTimeout(() => {
+    coin.textContent = isHeads ? '🙂' : '🔷';
+    label.textContent = isHeads
+      ? (isEn ? 'Heads!' : 'Pile !')
+      : (isEn ? 'Tails!' : 'Face !');
+    if (isHeads) heads++; else tails++;
+    document.getElementById('stats').textContent =
+      (isEn ? `Heads: ${heads} · Tails: ${tails}` : `Pile : ${heads} · Face : ${tails}`);
+  }, 550);
+}
+function multiFlip() {
+  const isEn = document.documentElement.getAttribute('data-lang') === 'en';
+  const n = Math.min(500, Math.max(1, parseInt(document.getElementById('multi-count').value) || 10));
+  let h = 0, t = 0;
+  const seq = [];
+  for (let i = 0; i < n; i++) {
+    if (Math.random() < 0.5) { h++; seq.push(isEn ? 'H' : 'P'); } else { t++; seq.push(isEn ? 'T' : 'F'); }
+  }
+  document.getElementById('multi-results').innerHTML =
+    `<strong>${isEn ? 'Heads' : 'Pile'}: ${h} (${(h/n*100).toFixed(1)}%) — ${isEn ? 'Tails' : 'Face'}: ${t} (${(t/n*100).toFixed(1)}%)</strong><br><span style="font-family:monospace;">${seq.join(' ')}</span>`;
+}
+</script>
+</body>
+</html>
