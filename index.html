@@ -12,7 +12,7 @@
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <script type="application/ld+json">
 {
@@ -55,12 +55,12 @@
   * { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
     --ink: #1c2b22; --ink-soft: #5b6b62; --ink-mute: #8a978d;
-    --paper: #faf8f4; --card: #eef4fb; --card-border: #d7e6f5;
+    --paper: #ffffff; --card: #eef4fb; --card-border: #d7e6f5;
     --accent: #1f6f5c; --accent-dark: #164f42; --accent-soft: rgba(31,111,92,0.10);
     --line: #e5e0d5;
     --heads: #1f6f5c; --tails: #c9432e;
   }
-  body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; background: var(--paper); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  body { font-family: 'Space Grotesk', system-ui, sans-serif; background: var(--paper); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
   .wrap { max-width: 880px; margin: 0 auto; padding: 0 20px; }
   header { background: #fff; border-bottom: 1px solid var(--line); padding: 16px 0; }
   .header-row { display: flex; align-items: center; justify-content: space-between; }
@@ -129,7 +129,7 @@
 
 <header>
   <div class="wrap header-row">
-    <div class="logo"><span class="logo-icon">🪙</span> CoinToss<span style="color:var(--accent)">.</span></div>
+    <div class="logo"><span class="logo-icon">P</span> CoinToss<span style="color:var(--accent)">.</span></div>
     <a href="/probabilites.html" style="color:var(--ink-soft);text-decoration:none;font-size:0.85rem;font-weight:600;margin-right:14px;">Probabilités</a><div class="lang-switch">
       <button id="btn-fr" class="active" onclick="setLang('fr')">FR</button>
       <button id="btn-en" onclick="setLang('en')">EN</button>
@@ -141,13 +141,13 @@
   <div class="ad-slot">Publicité / Advertisement — AdSense (bannière responsive)</div>
 
   <section class="hero">
-    <span class="badge">⚡ <span data-lang-fr>100% aléatoire, gratuit, sans inscription</span><span data-lang-en>100% random, free, no sign-up</span></span>
+    <span class="badge"><span data-lang-fr>100% aléatoire, gratuit, sans inscription</span><span data-lang-en>100% random, free, no sign-up</span></span>
     <h1><span data-lang-fr>Pile ou Face en Ligne</span><span data-lang-en>Flip a Coin Online</span></h1>
     <p class="lede"><span data-lang-fr>Un clic, une décision. Tirage équitable et instantané.</span><span data-lang-en>One click, one decision. Fair and instant flip.</span></p>
   </section>
 
   <div class="coin-zone">
-    <div class="coin" id="coin">🪙</div>
+    <div class="coin" id="coin">?</div>
     <div class="result-label" id="result-label">&nbsp;</div>
     <button class="btn" onclick="flipCoin()"><span data-lang-fr>Lancer la pièce</span><span data-lang-en>Flip the coin</span></button>
     <div class="stats" id="stats"></div>
@@ -270,7 +270,7 @@ function flipCoin() {
   coin.classList.add('flipping');
   const isHeads = Math.random() < 0.5;
   setTimeout(() => {
-    coin.textContent = isHeads ? '🙂' : '🔷';
+    coin.textContent = isHeads ? 'P' : 'F';
     label.textContent = isHeads
       ? (isEn ? 'Heads!' : 'Pile !')
       : (isEn ? 'Tails!' : 'Face !');
