@@ -123,14 +123,24 @@
   [data-lang-en] { display: none; }
   html[data-lang="en"] [data-lang-fr] { display: none; }
   html[data-lang="en"] [data-lang-en] { display: initial; }
+  nav.main-nav { display: flex; gap: 18px; }
+  nav.main-nav a { color: var(--ink-soft); text-decoration: none; font-size: 0.85rem; font-weight: 600; }
+  nav.main-nav a:hover, nav.main-nav a.active { color: var(--accent); }
 </style>
 </head>
 <body>
 
 <header>
   <div class="wrap header-row">
-    <div class="logo"><span class="logo-icon">P</span> CoinToss<span style="color:var(--accent)">.</span></div>
-    <a href="/probabilites.html" style="color:var(--ink-soft);text-decoration:none;font-size:0.85rem;font-weight:600;margin-right:14px;">Probabilités</a><div class="lang-switch">
+    <a class="logo" href="/"><span class="logo-icon">P</span> CoinToss</a>
+    <nav class="main-nav">
+      <a href="/" class="active">Home</a>
+      <a href="/tools.html">Free Tools</a>
+      <a href="/probabilites.html">Guides</a>
+      <a href="/blog.html">Blog</a>
+      <a href="/about.html">About</a>
+    </nav>
+    <div class="lang-switch">
       <button id="btn-fr" class="active" onclick="setLang('fr')">FR</button>
       <button id="btn-en" onclick="setLang('en')">EN</button>
     </div>
