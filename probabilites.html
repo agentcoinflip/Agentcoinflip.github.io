@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6367714751873176" crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comprendre les Probabilités du Pile ou Face | Coin Flip</title>
+<meta name="description" content="Comment fonctionnent réellement les probabilités d'un tirage à pile ou face, pourquoi un vrai tirage physique n'est jamais parfaitement 50/50, et comment un générateur numérique s'en rapproche.">
+<link rel="canonical" href="https://maelysbussac-ship-it.github.io/probabilites.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #1c2b22; --ink-soft: #5b6b62; --ink-mute: #8a978d;
+    --paper: #faf8f4; --card: #eef4f0; --card-border: #d7e5df;
+    --accent: #1f6f5c; --accent-dark: #164f42; --accent-soft: rgba(31,111,92,0.10);
+    --line: #e5e0d5;
+  }
+  body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; background: var(--paper); color: var(--ink); line-height: 1.65; }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+  header { background: #fff; border-bottom: 1px solid var(--line); padding: 16px 0; }
+  .header-row { display: flex; align-items: center; justify-content: space-between; }
+  .logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.05rem; text-decoration: none; color: var(--ink); }
+  .logo-icon { width: 36px; height: 36px; border-radius: 6px; background: var(--accent); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
+  nav a { color: var(--ink-soft); text-decoration: none; font-size: 0.85rem; font-weight: 600; }
+  main { padding: 44px 0 60px; }
+  h1 { font-size: 1.9rem; font-weight: 800; letter-spacing: -0.01em; margin-bottom: 14px; }
+  h2 { font-size: 1.2rem; font-weight: 700; margin: 32px 0 10px; }
+  p { color: var(--ink-soft); font-size: 0.98rem; margin-bottom: 14px; }
+  .ad-slot { background: #f1ede4; border: 1px dashed #d8d2c4; border-radius: 10px; text-align: center; padding: 14px; font-size: 0.7rem; color: var(--ink-mute); letter-spacing: 0.05em; text-transform: uppercase; margin: 28px 0; }
+  .card { background: var(--card); border: 1px solid var(--card-border); border-radius: 12px; padding: 18px 20px; margin: 20px 0; }
+  .card p { margin-bottom: 0; color: var(--ink); font-size: 0.92rem; }
+  a.cta { display: inline-block; background: var(--accent); color: #fff; text-decoration: none; border-radius: 10px; padding: 12px 24px; font-weight: 700; font-size: 0.95rem; margin-top: 8px; }
+  footer { background: #fff; border-top: 1px solid var(--line); padding: 28px 0; margin-top: 40px; font-size: 0.82rem; color: var(--ink-mute); text-align: center; }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap header-row">
+    <a class="logo" href="/"><span class="logo-icon">⊙</span> Pile ou Face</span></a>
+    <nav><a href="/">Retour à l'outil</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <h1>Un pile ou face est-il vraiment 50/50&nbsp;?</h1>
+  <p>La réponse courte&nbsp;: un tirage numérique bien conçu, oui. Un vrai tirage physique, presque — et c'est cette petite nuance qui rend le sujet intéressant.</p>
+
+  <h2>Ce que disent les études sur les vraies pièces</h2>
+  <p>Des chercheurs qui ont filmé et analysé des dizaines de milliers de lancers de pièces réelles ont observé un très léger biais&nbsp;: la face visible au moment du lancer a une chance un peu plus élevée que 50% de retomber du même côté (l'écart mesuré tourne autour de 51%). La cause&nbsp;: la façon dont une pièce est propulsée en l'air crée une trajectoire légèrement asymétrique, pas un défaut de la pièce elle-même.</p>
+
+  <h2>Pourquoi un générateur numérique n'a pas ce biais</h2>
+  <p>Un outil comme celui-ci ne simule pas la physique d'une pièce qui tourne dans les airs&nbsp;: il tire un nombre aléatoire et lui associe une face. Cette méthode élimine le biais mécanique observé sur les vrais lancers et se rapproche donc, sur un grand nombre de tirages, d'une répartition réellement égale entre les deux faces.</p>
+
+  <div class="card">
+    <p><b>À retenir&nbsp;:</b> plus le nombre de tirages est grand, plus la proportion de chaque face se rapproche de 50%. Sur 10 tirages, un écart de 7 contre 3 n'a rien d'anormal — c'est la loi des grands nombres qui joue sur des centaines ou des milliers de tirages, pas sur une poignée.</p>
+  </div>
+
+  <h2>Dans quels cas la fiabilité compte vraiment</h2>
+  <p>Pour une décision informelle (qui commence une partie, qui choisit le film du soir), la question ne se pose pas vraiment. Pour un usage qui nécessite une garantie d'équité formelle (tirage au sort officiel, contexte réglementé), aucun générateur en ligne gratuit — le nôtre compris — ne doit être considéré comme une preuve d'équité certifiée&nbsp;: il faut alors un dispositif audité spécifiquement pour cet usage.</p>
+
+  <div class="ad-slot">Publicité / Advertisement — AdSense</div>
+
+  <p>Envie de tester&nbsp;? <a class="cta" href="/">Retourner à l'outil de tirage à pile ou face</a></p>
+</main>
+
+<footer>
+  <div class="wrap">© Pile ou Face en Ligne — <a href="/#" style="color:var(--accent-dark);">Mentions légales &amp; RGPD</a></div>
+</footer>
+</body>
+</html>
