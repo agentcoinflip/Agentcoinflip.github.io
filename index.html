@@ -56,16 +56,16 @@
   :root {
     --ink: #1c2b22; --ink-soft: #5b6b62; --ink-mute: #8a978d;
     --paper: #faf8f4; --card: #eef4fb; --card-border: #d7e6f5;
-    --accent: #b06e2c; --accent-dark: #95571f; --accent-soft: rgba(176,110,44,0.10);
+    --accent: #1f6f5c; --accent-dark: #164f42; --accent-soft: rgba(31,111,92,0.10);
     --line: #e5e0d5;
-    --heads: #2f6e52; --tails: #4a6b8a;
+    --heads: #1f6f5c; --tails: #c9432e;
   }
   body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; background: var(--paper); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
   .wrap { max-width: 880px; margin: 0 auto; padding: 0 20px; }
   header { background: #fff; border-bottom: 1px solid var(--line); padding: 16px 0; }
   .header-row { display: flex; align-items: center; justify-content: space-between; }
   .logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.05rem; }
-  .logo-icon { width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, var(--heads), var(--tails)); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
+  .logo-icon { width: 36px; height: 36px; border-radius: 6px; background: var(--heads); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
   .lang-switch button { background: none; border: 1px solid var(--line); border-radius: 8px; padding: 5px 12px; font-weight: 600; font-size: 0.8rem; color: var(--ink-soft); cursor: pointer; }
   .lang-switch button.active { background: var(--accent); color: #fff; border-color: var(--accent); }
 
@@ -83,7 +83,7 @@
     font-size: 2.4rem; font-weight: 800; color: #fff; user-select: none;
     box-shadow: 0 12px 30px -8px rgba(28,43,34,0.25);
     transition: transform 0.6s cubic-bezier(.2,.8,.3,1.2);
-    background: linear-gradient(135deg, var(--heads), var(--tails));
+    background: var(--heads);
   }
   .coin.flipping { animation: spin 0.6s linear; }
   @keyframes spin { from { transform: rotateY(0deg); } to { transform: rotateY(1800deg); } }
