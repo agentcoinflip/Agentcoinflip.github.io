@@ -174,23 +174,23 @@
   <div class="ad-slot">Publicité / Advertisement — AdSense (bannière responsive)</div>
 
   <section class="hero">
-    <span class="badge"><span data-lang-fr>100% aléatoire, gratuit, sans inscription</span><span data-lang-en>100% random, free, no sign-up</span></span>
-    <h1><span data-lang-fr>Pile ou Face en Ligne</span><span data-lang-en>Flip a Coin Online</span></h1>
-    <p class="lede"><span data-lang-fr>Un clic, une décision. Tirage équitable et instantané.</span><span data-lang-en>One click, one decision. Fair and instant flip.</span></p>
+    <span class="badge"><span data-lang-fr>100% aléatoire, gratuit, sans inscription</span><span data-lang-en>100% random, free, no sign-up</span><span data-lang-es>100% aleatorio, gratis, sin registro</span><span data-lang-pt>100% aleatório, grátis, sem cadastro</span><span data-lang-hi>100% यादृच्छिक, मुफ़्त, बिना पंजीकरण के</span><span data-lang-ar>عشوائي 100%، مجاني، دون تسجيل</span></span>
+    <h1><span data-lang-fr>Pile ou Face en Ligne</span><span data-lang-en>Flip a Coin Online</span><span data-lang-es>Cara o Cruz en Línea</span><span data-lang-pt>Cara ou Coroa Online</span><span data-lang-hi>ऑनलाइन सिक्का उछालें</span><span data-lang-ar>رمي العملة أونلاين</span></h1>
+    <p class="lede"><span data-lang-fr>Un clic, une décision. Tirage équitable et instantané.</span><span data-lang-en>One click, one decision. Fair and instant flip.</span><span data-lang-es>Un clic, una decisión. Tirada justa e instantánea.</span><span data-lang-pt>Um clique, uma decisão. Sorteio justo e instantâneo.</span><span data-lang-hi>एक क्लिक, एक फैसला। न्यायसंगत और तत्काल परिणाम।</span><span data-lang-ar>نقرة واحدة، قرار واحد. قرعة عادلة وفورية.</span></p>
   </section>
 
   <div class="coin-zone">
     <div class="coin" id="coin">?</div>
     <div class="result-label" id="result-label">&nbsp;</div>
-    <button class="btn" onclick="flipCoin()"><span data-lang-fr>Lancer la pièce</span><span data-lang-en>Flip the coin</span></button>
+    <button class="btn" onclick="flipCoin()"><span data-lang-fr>Lancer la pièce</span><span data-lang-en>Flip the coin</span><span data-lang-es>Lanzar la moneda</span><span data-lang-pt>Lançar a moeda</span><span data-lang-hi>सिक्का उछालें</span><span data-lang-ar>ارمِ العملة</span></button>
     <div class="stats" id="stats"></div>
   </div>
 
   <div class="multi-card">
-    <h2><span data-lang-fr>Plusieurs tirages d'un coup</span><span data-lang-en>Multiple flips at once</span></h2>
+    <h2><span data-lang-fr>Plusieurs tirages d'un coup</span><span data-lang-en>Multiple flips at once</span><span data-lang-es>Varias tiradas a la vez</span><span data-lang-pt>Vários sorteios de uma vez</span><span data-lang-hi>एक साथ कई बार उछालें</span><span data-lang-ar>عدة رميات دفعة واحدة</span></h2>
     <div class="multi-row">
       <input type="number" id="multi-count" value="10" min="1" max="500">
-      <button class="btn-secondary" onclick="multiFlip()"><span data-lang-fr>Lancer plusieurs fois</span><span data-lang-en>Flip multiple times</span></button>
+      <button class="btn-secondary" onclick="multiFlip()"><span data-lang-fr>Lancer plusieurs fois</span><span data-lang-en>Flip multiple times</span><span data-lang-es>Lanzar varias veces</span><span data-lang-pt>Lançar várias vezes</span><span data-lang-hi>कई बार उछालें</span><span data-lang-ar>ارمِ عدة مرات</span></button>
     </div>
     <div id="multi-results"></div>
   </div>
@@ -198,11 +198,15 @@
   <div class="ad-slot">Publicité / Advertisement — AdSense (native in-content)</div>
 
   <section class="faq">
-    <h2 data-lang-fr>Questions fréquentes</h2><h2 data-lang-en>Frequently asked questions</h2>
+    <h2 data-lang-fr>Questions fréquentes</h2><h2 data-lang-en>Frequently asked questions</h2><h2 data-lang-es>Preguntas frecuentes</h2><h2 data-lang-pt>Perguntas frequentes</h2><h2 data-lang-hi>अक्सर पूछे जाने वाले प्रश्न</h2><h2 data-lang-ar>الأسئلة الشائعة</h2>
     <div class="faq-item">
-      <h3 data-lang-fr>Le tirage est-il vraiment aléatoire ?</h3><h3 data-lang-en>Is the flip truly random?</h3>
+      <h3 data-lang-fr>Le tirage est-il vraiment aléatoire ?</h3><h3 data-lang-en>Is the flip truly random?</h3><h3 data-lang-es>¿El resultado es realmente aleatorio?</h3><h3 data-lang-pt>O resultado é realmente aleatório?</h3><h3 data-lang-hi>क्या परिणाम सचमुच यादृच्छिक है?</h3><h3 data-lang-ar>هل النتيجة عشوائية فعلاً؟</h3>
       <p data-lang-fr>Oui, chaque tirage a exactement 50% de chances pour chaque face, comme une vraie pièce.</p>
       <p data-lang-en>Yes, each flip has exactly a 50% chance for each side, just like a real coin.</p>
+      <p data-lang-es>Sí, cada tirada tiene exactamente un 50% de probabilidad para cada cara, como una moneda real.</p>
+      <p data-lang-pt>Sim, cada sorteio tem exatamente 50% de chance para cada lado, como uma moeda real.</p>
+      <p data-lang-hi>हां, हर परिणाम में हर पक्ष के लिए ठीक 50% संभावना होती है, बिल्कुल वास्तविक सिक्के की तरह।</p>
+      <p data-lang-ar>نعم، كل رمية لها فرصة 50% بالضبط لكل وجه، تمامًا مثل العملة الحقيقية.</p>
     </div>
     <div class="faq-item">
       <h3 data-lang-fr>Puis-je faire plusieurs tirages d'affilée ?</h3><h3 data-lang-en>Can I flip multiple times in a row?</h3>
