@@ -50,31 +50,25 @@
 <header>
   <div class="wrap header-row">
     <a class="logo" href="/"><span class="logo-icon">P</span> CoinToss</a>
-    <nav class="main-nav">
-      <a href="/">Home</a>
-      <div class="nav-dropdown"><span class="dropdown-trigger" onclick="var p=this.nextElementSibling;p.classList.toggle('open')"><a href="/tools.html" style="color:inherit;text-decoration:none;">Free Tools</a> <span style="font-size:0.7em;">▾</span></span><div class="dropdown-panel"><a href="/">Pile ou Face</a><a href="/oracle.html">Oracle Oui ou Non</a><a href="/nombre-aleatoire.html">Nombre Aléatoire</a></div></div>
-      <a href="/probabilites.html">Guides</a>
-      <a href="/blog.html">Blog</a>
-      <a href="/about.html">About</a>
-    </nav>
+    <nav class="main-nav"><a href="/" data-i18n="nav-home">Home</a><div class="nav-dropdown"><span class="dropdown-trigger" onclick="var p=this.nextElementSibling;p.classList.toggle('open')"><a href="/tools.html" style="color:inherit;text-decoration:none;" data-i18n="nav-tools">Free Tools</a> <span style="font-size:0.7em;">&#9662;</span></span><div class="dropdown-panel"><a href="/" data-i18n="nav-tool1">Pile ou Face</a><a href="/oracle.html" data-i18n="nav-tool2">Oracle Oui ou Non</a><a href="/nombre-aleatoire.html" data-i18n="nav-tool3">Nombre Aléatoire</a></div></div><a href="/probabilites.html" data-i18n="nav-guides">Guides</a><a href="/blog.html" data-i18n="nav-blog">Blog</a><a href="/about.html" data-i18n="nav-about">About</a><div class="nav-dropdown"><span class="dropdown-trigger" onclick="var p=this.nextElementSibling;p.classList.toggle('open')"><span id="lang-current">FR</span> <span style="font-size:0.7em;">&#9662;</span></span><div class="dropdown-panel lang-panel"><a href="#" data-lang="fr" onclick="setLanguage('fr');return false;">Français</a><a href="#" data-lang="en" onclick="setLanguage('en');return false;">English</a><a href="#" data-lang="es" onclick="setLanguage('es');return false;">Español</a><a href="#" data-lang="pt" onclick="setLanguage('pt');return false;">Português</a><a href="#" data-lang="hi" onclick="setLanguage('hi');return false;">हिन्दी</a><a href="#" data-lang="ar" onclick="setLanguage('ar');return false;">العربية</a></div></div></nav>
   </div>
 </header>
 
 <main class="wrap">
-  <h1>Outils gratuits</h1>
-  <p class="lede">Tous les outils de tirage aléatoire et de décision disponibles sur ce site, gratuits, sans inscription, directement dans votre navigateur.</p>
+  <h1 data-i18n="h1">Outils gratuits</h1>
+  <p class="lede" data-i18n="lede">Tous les outils de tirage aléatoire et de décision disponibles sur ce site, gratuits, sans inscription, directement dans votre navigateur.</p>
   <div class="tool-grid">
     <a class="tool-card" href="/">
-      <h2>Pile ou Face</h2>
-      <p>Tirage aléatoire à pile ou face, instantané et équitable.</p>
+      <h2 data-i18n="card1-title">Pile ou Face</h2>
+      <p data-i18n="card1-desc">Tirage aléatoire à pile ou face, instantané et équitable.</p>
     </a>
     <a class="tool-card" href="/oracle.html">
-      <h2>Oracle Oui ou Non</h2>
-      <p>Pose une question fermée, obtiens une réponse instantanée.</p>
+      <h2 data-i18n="card2-title">Oracle Oui ou Non</h2>
+      <p data-i18n="card2-desc">Pose une question fermée, obtiens une réponse instantanée.</p>
     </a>
     <a class="tool-card" href="/nombre-aleatoire.html">
-      <h2>Nombre Aléatoire</h2>
-      <p>Génère un nombre aléatoire entre deux valeurs de ton choix.</p>
+      <h2 data-i18n="card3-title">Nombre Aléatoire</h2>
+      <p data-i18n="card3-desc">Génère un nombre aléatoire entre deux valeurs de ton choix.</p>
     </a>
   </div>
 </main>
@@ -82,5 +76,7 @@
 <footer>
   <div class="wrap">© Pile ou Face en Ligne</div>
 </footer>
+<script>window.translations = {"fr": {"nav-home": "Home", "nav-tools": "Free Tools", "nav-tool1": "Pile ou Face", "nav-tool2": "Oracle Oui ou Non", "nav-tool3": "Nombre Aléatoire", "nav-guides": "Guides", "nav-blog": "Blog", "nav-about": "About", "h1": "Outils gratuits", "lede": "Tous les outils de tirage aléatoire et de décision disponibles sur ce site, gratuits, sans inscription, directement dans votre navigateur.", "card1-title": "Pile ou Face", "card1-desc": "Tirage aléatoire à pile ou face, instantané et équitable.", "card2-title": "Oracle Oui ou Non", "card2-desc": "Pose une question fermée, obtiens une réponse instantanée.", "card3-title": "Nombre Aléatoire", "card3-desc": "Génère un nombre aléatoire entre deux valeurs de ton choix.", "_title": "Tous les Outils Gratuits | Pile ou Face", "_desc": "La liste complète des outils gratuits de tirage aléatoire et de décision disponibles sur ce site, sans inscription."}, "en": {"nav-home": "Home", "nav-tools": "Free Tools", "nav-tool1": "Coin Flip", "nav-tool2": "Yes or No Oracle", "nav-tool3": "Random Number", "nav-guides": "Guides", "nav-blog": "Blog", "nav-about": "About", "h1": "Free tools", "lede": "All the random-draw and decision tools available on this site, free, no sign-up, directly in your browser.", "card1-title": "Coin Flip", "card1-desc": "Random coin flip, instant and fair.", "card2-title": "Yes or No Oracle", "card2-desc": "Ask a closed question, get an instant answer.", "card3-title": "Random Number", "card3-desc": "Generates a random number between two values of your choice.", "_title": "All Free Tools | Coin Flip", "_desc": "The full list of free random-draw and decision tools available on this site, no sign-up."}, "es": {"nav-home": "Inicio", "nav-tools": "Herramientas Gratis", "nav-tool1": "Cara o Cruz", "nav-tool2": "Oráculo Sí o No", "nav-tool3": "Número Aleatorio", "nav-guides": "Guías", "nav-blog": "Blog", "nav-about": "Acerca de", "h1": "Herramientas gratuitas", "lede": "Todas las herramientas de sorteo aleatorio y decisión disponibles en este sitio, gratis, sin registro, directamente en tu navegador.", "card1-title": "Cara o Cruz", "card1-desc": "Sorteo aleatorio de cara o cruz, instantáneo y justo.", "card2-title": "Oráculo Sí o No", "card2-desc": "Haz una pregunta cerrada, obtén una respuesta instantánea.", "card3-title": "Número Aleatorio", "card3-desc": "Genera un número aleatorio entre dos valores de tu elección.", "_title": "Todas las Herramientas Gratuitas | Cara o Cruz", "_desc": "La lista completa de herramientas gratuitas de sorteo aleatorio y decisión disponibles en este sitio, sin registro."}, "pt": {"nav-home": "Início", "nav-tools": "Ferramentas Grátis", "nav-tool1": "Cara ou Coroa", "nav-tool2": "Oráculo Sim ou Não", "nav-tool3": "Número Aleatório", "nav-guides": "Guias", "nav-blog": "Blog", "nav-about": "Sobre", "h1": "Ferramentas gratuitas", "lede": "Todas as ferramentas de sorteio aleatório e decisão disponíveis neste site, gratuitas, sem cadastro, diretamente no seu navegador.", "card1-title": "Cara ou Coroa", "card1-desc": "Sorteio aleatório de cara ou coroa, instantâneo e justo.", "card2-title": "Oráculo Sim ou Não", "card2-desc": "Faça uma pergunta fechada, obtenha uma resposta instantânea.", "card3-title": "Número Aleatório", "card3-desc": "Gera um número aleatório entre dois valores de sua escolha.", "_title": "Todas as Ferramentas Gratuitas | Cara ou Coroa", "_desc": "A lista completa de ferramentas gratuitas de sorteio aleatório e decisão disponíveis neste site, sem cadastro."}, "hi": {"nav-home": "होम", "nav-tools": "मुफ़्त टूल्स", "nav-tool1": "सिक्का टॉस", "nav-tool2": "हां या ना ओरेकल", "nav-tool3": "यादृच्छिक संख्या", "nav-guides": "गाइड", "nav-blog": "ब्लॉग", "nav-about": "हमारे बारे में", "h1": "मुफ़्त टूल्स", "lede": "इस साइट पर उपलब्ध सभी यादृच्छिक ड्रॉ और निर्णय उपकरण, मुफ़्त, बिना पंजीकरण के, सीधे आपके ब्राउज़र में।", "card1-title": "सिक्का टॉस", "card1-desc": "यादृच्छिक सिक्का टॉस, तत्काल और न्यायसंगत।", "card2-title": "हां या ना ओरेकल", "card2-desc": "एक बंद प्रश्न पूछें, तत्काल जवाब पाएं।", "card3-title": "यादृच्छिक संख्या", "card3-desc": "आपकी पसंद की दो सीमाओं के बीच एक यादृच्छिक संख्या उत्पन्न करता है।", "_title": "सभी मुफ़्त टूल्स | सिक्का टॉस", "_desc": "इस साइट पर उपलब्ध मुफ़्त यादृच्छिक ड्रॉ और निर्णय उपकरणों की पूरी सूची, बिना पंजीकरण के।"}, "ar": {"nav-home": "الرئيسية", "nav-tools": "أدوات مجانية", "nav-tool1": "رمي العملة", "nav-tool2": "وراقة نعم أو لा", "nav-tool3": "رقم عشوائي", "nav-guides": "أدلة", "nav-blog": "المدونة", "nav-about": "من نحن", "h1": "أدوات مجانية", "lede": "جميع أدوات القرعة العشوائية والقرار المتاحة على هذا الموقع، مجانية، دون تسجيل، مباشرة في متصفحك.", "card1-title": "رمي العملة", "card1-desc": "رمية عشوائية للعملة، فورية وعادلة.", "card2-title": "وراقة نعم أو لा", "card2-desc": "اطرح سؤالاً مغلقاً، واحصل على إجابة فورية.", "card3-title": "رقم عشوائي", "card3-desc": "يولّد رقمًا عشوائيًا بين قيمتين من اختيارك.", "_title": "جميع الأدوات المجانية | رمي العملة", "_desc": "القائمة الكاملة لأدوات القرعة العشوائية والقرار المتاحة على هذا الموقع، دون تسجيل."}};</script>
+<script src="/i18n.js"></script>
 </body>
 </html>
