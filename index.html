@@ -366,6 +366,7 @@ const LABELS = {
 };
 function setLang(lang) {
   document.documentElement.setAttribute('data-lang', lang);
+  document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
   try { localStorage.setItem('site_lang', lang); } catch (e) {}
   const cur = document.getElementById('lang-current');
   if (cur) cur.textContent = LABELS[lang].current;
