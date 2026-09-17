@@ -59,52 +59,37 @@
 <header>
   <div class="wrap header-row">
     <a class="logo" href="/"><span class="logo-icon">P</span> CoinToss</a>
-    <nav class="main-nav">
-      <a href="/">Home</a>
-      <div class="nav-dropdown">
-        <span class="dropdown-trigger" onclick="var p=this.nextElementSibling;p.classList.toggle('open')">
-          <a href="/tools.html" style="color:inherit;text-decoration:none;">Free Tools</a> <span style="font-size:0.7em;">&#9662;</span>
-        </span>
-        <div class="dropdown-panel">
-          <a href="/">Pile ou Face</a>
-          <a href="/oracle.html">Oracle Oui ou Non</a>
-          <a href="/nombre-aleatoire.html">Nombre Aléatoire</a>
-        </div>
-      </div>
-      <a href="/probabilites.html">Guides</a>
-      <a href="/blog.html">Blog</a>
-      <a href="/about.html">About</a>
-    </nav>
+    <nav class="main-nav"><a href="/" data-i18n="nav-home">Home</a><div class="nav-dropdown"><span class="dropdown-trigger" onclick="var p=this.nextElementSibling;p.classList.toggle('open')"><a href="/tools.html" style="color:inherit;text-decoration:none;" data-i18n="nav-tools">Free Tools</a> <span style="font-size:0.7em;">&#9662;</span></span><div class="dropdown-panel"><a href="/" data-i18n="nav-tool1">Pile ou Face</a><a href="/oracle.html" data-i18n="nav-tool2">Oracle Oui ou Non</a><a href="/nombre-aleatoire.html" data-i18n="nav-tool3">Nombre Aléatoire</a></div></div><a href="/probabilites.html" data-i18n="nav-guides">Guides</a><a href="/blog.html" data-i18n="nav-blog">Blog</a><a href="/about.html" data-i18n="nav-about">About</a><div class="nav-dropdown"><span class="dropdown-trigger" onclick="var p=this.nextElementSibling;p.classList.toggle('open')"><span id="lang-current">FR</span> <span style="font-size:0.7em;">&#9662;</span></span><div class="dropdown-panel lang-panel"><a href="#" data-lang="fr" onclick="setLanguage('fr');return false;">Français</a><a href="#" data-lang="en" onclick="setLanguage('en');return false;">English</a><a href="#" data-lang="es" onclick="setLanguage('es');return false;">Español</a><a href="#" data-lang="pt" onclick="setLanguage('pt');return false;">Português</a><a href="#" data-lang="hi" onclick="setLanguage('hi');return false;">हिन्दी</a><a href="#" data-lang="ar" onclick="setLanguage('ar');return false;">العربية</a></div></div></nav>
   </div>
 </header>
 
 <main class="wrap">
   <div class="hero">
-    <h1>Oracle Oui ou Non</h1>
-    <p class="lede">Posez une question fermée, obtenez une réponse instantanée. Idéal pour trancher une petite décision.</p>
+    <h1 data-i18n="h1">Oracle Oui ou Non</h1>
+    <p class="lede" data-i18n="lede">Posez une question fermée, obtenez une réponse instantanée. Idéal pour trancher une petite décision.</p>
   </div>
 
   <div class="oracle-zone">
     <input type="text" id="question" placeholder="Tape ta question ici (facultatif)...">
     <div class="orb" id="orb">?</div>
-    <button class="btn" onclick="ask()">Demander à l'oracle</button>
+    <button class="btn" onclick="ask()" data-i18n="btn">Demander à l'oracle</button>
   </div>
 
   <div class="ad-slot">Publicité / Advertisement — AdSense</div>
 
   <section class="faq">
-    <h2>Questions fréquentes</h2>
+    <h2 data-i18n="faq-h2">Questions fréquentes</h2>
     <div class="faq-item">
-      <h3>Comment fonctionne l'oracle ?</h3>
-      <p>Il tire aléatoirement une réponse parmi une vingtaine de formulations (oui, non, ou incertain), inspirées du principe classique de la boule magique à 8 faces.</p>
+      <h3 data-i18n="faq1-q">Comment fonctionne l'oracle ?</h3>
+      <p data-i18n="faq1-a">Il tire aléatoirement une réponse parmi une vingtaine de formulations (oui, non, ou incertain), inspirées du principe classique de la boule magique à 8 faces.</p>
     </div>
     <div class="faq-item">
-      <h3>Faut-il vraiment écrire une question ?</h3>
-      <p>Non, c'est facultatif — la réponse est générée aléatoirement quoi qu'il arrive, écrire la question aide juste à se concentrer sur sa décision.</p>
+      <h3 data-i18n="faq2-q">Faut-il vraiment écrire une question ?</h3>
+      <p data-i18n="faq2-a">Non, c'est facultatif — la réponse est générée aléatoirement quoi qu'il arrive, écrire la question aide juste à se concentrer sur sa décision.</p>
     </div>
     <div class="faq-item">
-      <h3>Est-ce gratuit et sans inscription ?</h3>
-      <p>Oui, entièrement gratuit, aucun compte à créer, tout se passe dans votre navigateur.</p>
+      <h3 data-i18n="faq3-q">Est-ce gratuit et sans inscription ?</h3>
+      <p data-i18n="faq3-a">Oui, entièrement gratuit, aucun compte à créer, tout se passe dans votre navigateur.</p>
     </div>
   </section>
 </main>
@@ -114,19 +99,25 @@
 </footer>
 
 <script>
-const answers = [
-  "Oui, clairement.", "Oui.", "Tout indique que oui.", "Probablement oui.",
-  "Non, clairement.", "Non.", "Tout indique que non.", "Probablement non.",
-  "Réessaie plus tard.", "Difficile à dire pour l'instant.", "Concentre-toi et redemande.",
-  "Les signes sont flous.", "Impossible à prédire maintenant."
-];
+const ANSWERS = {
+  fr: ["Oui, clairement.", "Oui.", "Tout indique que oui.", "Probablement oui.", "Non, clairement.", "Non.", "Tout indique que non.", "Probablement non.", "Réessaie plus tard.", "Difficile à dire pour l'instant.", "Concentre-toi et redemande.", "Les signes sont flous.", "Impossible à prédire maintenant."],
+  en: ["Yes, clearly.", "Yes.", "All signs point to yes.", "Probably yes.", "No, clearly.", "No.", "All signs point to no.", "Probably not.", "Try again later.", "Hard to say right now.", "Focus and ask again.", "The signs are unclear.", "Impossible to predict now."],
+  es: ["Sí, claramente.", "Sí.", "Todo indica que sí.", "Probablemente sí.", "No, claramente.", "No.", "Todo indica que no.", "Probablemente no.", "Inténtalo más tarde.", "Difícil de decir por ahora.", "Concéntrate y pregunta de nuevo.", "Las señales no son claras.", "Imposible predecir ahora."],
+  pt: ["Sim, claramente.", "Sim.", "Tudo indica que sim.", "Provavelmente sim.", "Não, claramente.", "Não.", "Tudo indica que não.", "Provavelmente não.", "Tente novamente mais tarde.", "Difícil dizer agora.", "Concentre-se e pergunte de novo.", "Os sinais não estão claros.", "Impossível prever agora."],
+  hi: ["हां, स्पष्ट रूप से।", "हां।", "सभी संकेत हां की ओर हैं।", "शायद हां।", "नहीं, स्पष्ट रूप से।", "नहीं।", "सभी संकेत नहीं की ओर हैं।", "शायद नहीं।", "बाद में फिर कोशिश करें।", "अभी कहना मुश्किल है।", "ध्यान केंद्रित करें और फिर पूछें।", "संकेत अस्पष्ट हैं।", "अभी भविष्यवाणी करना असंभव है।"],
+  ar: ["نعم، بوضوح.", "نعم.", "كل المؤشرات تشير إلى نعم.", "ربما نعم.", "لा، بوضوح.", "لा.", "كل المؤشرات تشير إلى لा.", "ربما لा.", "حاول مجددًا لاحقًا.", "من الصعب التأكيد الآن.", "ركّز واسأل مرة أخرى.", "الإشارات غير واضحة.", "مستحيل التنبؤ به الآن."]
+};
 function ask() {
   const orb = document.getElementById('orb');
+  const lang = document.documentElement.lang || 'fr';
+  const list = ANSWERS[lang] || ANSWERS.fr;
   orb.classList.remove('shake'); void orb.offsetWidth; orb.classList.add('shake');
   setTimeout(() => {
-    orb.textContent = answers[Math.floor(Math.random() * answers.length)];
+    orb.textContent = list[Math.floor(Math.random() * list.length)];
   }, 200);
 }
 </script>
+<script>window.translations = {"fr": {"nav-home": "Home", "nav-tools": "Free Tools", "nav-tool1": "Pile ou Face", "nav-tool2": "Oracle Oui ou Non", "nav-tool3": "Nombre Aléatoire", "nav-guides": "Guides", "nav-blog": "Blog", "nav-about": "About", "h1": "Oracle Oui ou Non", "lede": "Posez une question fermée, obtenez une réponse instantanée. Idéal pour trancher une petite décision.", "btn": "Demander à l'oracle", "faq-h2": "Questions fréquentes", "faq1-q": "Comment fonctionne l'oracle ?", "faq1-a": "Il tire aléatoirement une réponse parmi une vingtaine de formulations (oui, non, ou incertain), inspirées du principe classique de la boule magique à 8 faces.", "faq2-q": "Faut-il vraiment écrire une question ?", "faq2-a": "Non, c'est facultatif — la réponse est générée aléatoirement quoi qu'il arrive, écrire la question aide juste à se concentrer sur sa décision.", "faq3-q": "Est-ce gratuit et sans inscription ?", "faq3-a": "Oui, entièrement gratuit, aucun compte à créer, tout se passe dans votre navigateur.", "_title": "Oracle Oui ou Non Gratuit | Coin Flip", "_desc": "Pose une question fermée et obtiens une réponse instantanée oui ou non, gratuit et sans inscription."}, "en": {"nav-home": "Home", "nav-tools": "Free Tools", "nav-tool1": "Coin Flip", "nav-tool2": "Yes or No Oracle", "nav-tool3": "Random Number", "nav-guides": "Guides", "nav-blog": "Blog", "nav-about": "About", "h1": "Yes or No Oracle", "lede": "Ask a closed question, get an instant answer. Perfect for settling a small decision.", "btn": "Ask the oracle", "faq-h2": "Frequently asked questions", "faq1-q": "How does the oracle work?", "faq1-a": "It randomly draws an answer from about twenty phrasings (yes, no, or uncertain), inspired by the classic magic 8-ball.", "faq2-q": "Do I really need to write a question?", "faq2-a": "No, it's optional — the answer is generated randomly either way, writing the question just helps you focus on your decision.", "faq3-q": "Is it free and without sign-up?", "faq3-a": "Yes, completely free, no account needed, everything runs in your browser.", "_title": "Free Yes or No Oracle | Coin Flip", "_desc": "Ask a closed question and get an instant yes or no answer, free and no sign-up."}, "es": {"nav-home": "Inicio", "nav-tools": "Herramientas Gratis", "nav-tool1": "Cara o Cruz", "nav-tool2": "Oráculo Sí o No", "nav-tool3": "Número Aleatorio", "nav-guides": "Guías", "nav-blog": "Blog", "nav-about": "Acerca de", "h1": "Oráculo Sí o No", "lede": "Haz una pregunta cerrada, obtén una respuesta instantánea. Ideal para resolver una pequeña decisión.", "btn": "Preguntar al oráculo", "faq-h2": "Preguntas frecuentes", "faq1-q": "¿Cómo funciona el oráculo?", "faq1-a": "Extrae aleatoriamente una respuesta entre unas veinte formulaciones (sí, no, o incierto), inspiradas en la clásica bola mágica de 8.", "faq2-q": "¿Es necesario escribir una pregunta?", "faq2-a": "No, es opcional — la respuesta se genera aleatoriamente de todos modos, escribir la pregunta solo ayuda a concentrarte en tu decisión.", "faq3-q": "¿Es gratis y sin registro?", "faq3-a": "Sí, completamente gratis, sin necesidad de crear cuenta, todo ocurre en tu navegador.", "_title": "Oráculo Sí o No Gratis | Cara o Cruz", "_desc": "Haz una pregunta cerrada y obtén una respuesta instantánea de sí o no, gratis y sin registro."}, "pt": {"nav-home": "Início", "nav-tools": "Ferramentas Grátis", "nav-tool1": "Cara ou Coroa", "nav-tool2": "Oráculo Sim ou Não", "nav-tool3": "Número Aleatório", "nav-guides": "Guias", "nav-blog": "Blog", "nav-about": "Sobre", "h1": "Oráculo Sim ou Não", "lede": "Faça uma pergunta fechada, obtenha uma resposta instantânea. Ideal para resolver uma pequena decisão.", "btn": "Perguntar ao oráculo", "faq-h2": "Perguntas frequentes", "faq1-q": "Como funciona o oráculo?", "faq1-a": "Ele sorteia aleatoriamente uma resposta entre cerca de vinte formulações (sim, não, ou incerto), inspiradas na clássica bola mágica 8.", "faq2-q": "É realmente necessário escrever uma pergunta?", "faq2-a": "Não, é opcional — a resposta é gerada aleatoriamente de qualquer forma, escrever a pergunta apenas ajuda a focar na sua decisão.", "faq3-q": "É gratuito e sem cadastro?", "faq3-a": "Sim, totalmente gratuito, sem necessidade de criar conta, tudo acontece no seu navegador.", "_title": "Oráculo Sim ou Não Grátis | Cara ou Coroa", "_desc": "Faça uma pergunta fechada e obtenha uma resposta instantânea de sim ou não, gratuita e sem cadastro."}, "hi": {"nav-home": "होम", "nav-tools": "मुफ़्त टूल्स", "nav-tool1": "सिक्का टॉस", "nav-tool2": "हां या ना ओरेकल", "nav-tool3": "यादृच्छिक संख्या", "nav-guides": "गाइड", "nav-blog": "ब्लॉग", "nav-about": "हमारे बारे में", "h1": "हां या ना ओरेकल", "lede": "एक बंद प्रश्न पूछें, तत्काल जवाब पाएं। एक छोटा निर्णय लेने के लिए आदर्श।", "btn": "ओरेकल से पूछें", "faq-h2": "अक्सर पूछे जाने वाले प्रश्न", "faq1-q": "ओरेकल कैसे काम करता है?", "faq1-a": "यह लगभग बीस वाक्यों (हां, ना, या अनिश्चित) में से यादृच्छिक रूप से एक जवाब चुनता है, जो क्लासिक मैजिक 8-बॉल से प्रेरित है।", "faq2-q": "क्या सचमुच प्रश्न लिखना जरूरी है?", "faq2-a": "नहीं, यह वैकल्पिक है — जवाब यादृच्छिक रूप से ही उत्पन्न होती है, प्रश्न लिखना सिर्फ़ आपको अपने निर्णय पर ध्यान केंद्रित करने में मदद करता है।", "faq3-q": "क्या यह मुफ़्त और बिना पंजीकरण के है?", "faq3-a": "हां, पूरी तरह मुफ़्त, किसी खाते की आवश्यकता नहीं, सब कुछ आपके ब्राउज़र में होता है।", "_title": "मुफ़्त हां या ना ओरेकल | सिक्का टॉस", "_desc": "एक बंद प्रश्न पूछें और तत्काल हां या ना जवाब पाएं, मुफ़्त और बिना पंजीकरण के।"}, "ar": {"nav-home": "الرئيسية", "nav-tools": "أدوات مجانية", "nav-tool1": "رمي العملة", "nav-tool2": "وراقة نعم أو لा", "nav-tool3": "رقم عشوائي", "nav-guides": "أدلة", "nav-blog": "المدونة", "nav-about": "من نحن", "h1": "وراقة نعم أو لा", "lede": "اطرح سؤالاً مغلقاً، واحصل على إجابة فورية. مثالية لحسم قرار صغير.", "btn": "اسأل الوراقة", "faq-h2": "الأسئلة الشائعة", "faq1-q": "كيف تعمل الوراقة؟", "faq1-a": "تسحب عشوائيًا إجابة من بين نحو عشرين صيغة (نعم، لा، أو غير مؤكد)، مستلهمة من الكرة السحرية الكلاسيكية ذات الأوجه الثمانية.", "faq2-q": "هل يجب فعلاً كتابة سؤال؟", "faq2-a": "لा، هذا اختياري — يُولّد الجواب عشوائيًا في جميع الأحوال، كتابة السؤال يساعدك فقط على التركيز على قرارك.", "faq3-q": "هل هي مجانية ودون تسجيل؟", "faq3-a": "نعم، مجانية بالكامل، لا حاجة لإنشاء حساب، كل شيء يتم داخل متصفحك.", "_title": "وراقة نعم أو لा مجانية | رمي العملة", "_desc": "اطرح سؤالاً مغلقاً واحصل على إجابة فورية بنعم أو لा، مجانية ودون تسجيل."}};</script>
+<script src="/i18n.js"></script>
 </body>
 </html>
