@@ -59,55 +59,40 @@
 <header>
   <div class="wrap header-row">
     <a class="logo" href="/"><span class="logo-icon">P</span> CoinToss</a>
-    <nav class="main-nav">
-      <a href="/">Home</a>
-      <div class="nav-dropdown">
-        <span class="dropdown-trigger" onclick="var p=this.nextElementSibling;p.classList.toggle('open')">
-          <a href="/tools.html" style="color:inherit;text-decoration:none;">Free Tools</a> <span style="font-size:0.7em;">&#9662;</span>
-        </span>
-        <div class="dropdown-panel">
-          <a href="/">Pile ou Face</a>
-          <a href="/oracle.html">Oracle Oui ou Non</a>
-          <a href="/nombre-aleatoire.html">Nombre Aléatoire</a>
-        </div>
-      </div>
-      <a href="/probabilites.html">Guides</a>
-      <a href="/blog.html">Blog</a>
-      <a href="/about.html">About</a>
-    </nav>
+    <nav class="main-nav"><a href="/" data-i18n="nav-home">Home</a><div class="nav-dropdown"><span class="dropdown-trigger" onclick="var p=this.nextElementSibling;p.classList.toggle('open')"><a href="/tools.html" style="color:inherit;text-decoration:none;" data-i18n="nav-tools">Free Tools</a> <span style="font-size:0.7em;">&#9662;</span></span><div class="dropdown-panel"><a href="/" data-i18n="nav-tool1">Pile ou Face</a><a href="/oracle.html" data-i18n="nav-tool2">Oracle Oui ou Non</a><a href="/nombre-aleatoire.html" data-i18n="nav-tool3">Nombre Aléatoire</a></div></div><a href="/probabilites.html" data-i18n="nav-guides">Guides</a><a href="/blog.html" data-i18n="nav-blog">Blog</a><a href="/about.html" data-i18n="nav-about">About</a><div class="nav-dropdown"><span class="dropdown-trigger" onclick="var p=this.nextElementSibling;p.classList.toggle('open')"><span id="lang-current">FR</span> <span style="font-size:0.7em;">&#9662;</span></span><div class="dropdown-panel lang-panel"><a href="#" data-lang="fr" onclick="setLanguage('fr');return false;">Français</a><a href="#" data-lang="en" onclick="setLanguage('en');return false;">English</a><a href="#" data-lang="es" onclick="setLanguage('es');return false;">Español</a><a href="#" data-lang="pt" onclick="setLanguage('pt');return false;">Português</a><a href="#" data-lang="hi" onclick="setLanguage('hi');return false;">हिन्दी</a><a href="#" data-lang="ar" onclick="setLanguage('ar');return false;">العربية</a></div></div></nav>
   </div>
 </header>
 
 <main class="wrap">
   <div class="hero">
-    <h1>Générateur de Nombre Aléatoire</h1>
-    <p class="lede">Choisis une plage de valeurs, obtiens un nombre aléatoire instantanément.</p>
+    <h1 data-i18n="h1">Générateur de Nombre Aléatoire</h1>
+    <p class="lede" data-i18n="lede">Choisis une plage de valeurs, obtiens un nombre aléatoire instantanément.</p>
   </div>
 
   <div class="tool-zone">
     <div class="range-row">
-      <label>De <input type="number" id="min" value="1"></label>
-      <label>à <input type="number" id="max" value="100"></label>
+      <label><span data-i18n="lbl-min">De</span> <input type="number" id="min" value="1"></label>
+      <label><span data-i18n="lbl-max">à</span> <input type="number" id="max" value="100"></label>
     </div>
     <div class="result" id="result">?</div>
-    <button class="btn" onclick="generate()">Générer</button>
+    <button class="btn" onclick="generate()" data-i18n="btn">Générer</button>
   </div>
 
   <div class="ad-slot">Publicité / Advertisement — AdSense</div>
 
   <section class="faq">
-    <h2>Questions fréquentes</h2>
+    <h2 data-i18n="faq-h2">Questions fréquentes</h2>
     <div class="faq-item">
-      <h3>Les bornes sont-elles incluses ?</h3>
-      <p>Oui, les valeurs min et max que tu saisis peuvent elles-mêmes être tirées.</p>
+      <h3 data-i18n="faq1-q">Les bornes sont-elles incluses ?</h3>
+      <p data-i18n="faq1-a">Oui, les valeurs min et max que tu saisis peuvent elles-mêmes être tirées.</p>
     </div>
     <div class="faq-item">
-      <h3>Puis-je utiliser des nombres négatifs ?</h3>
-      <p>Oui, l'outil accepte n'importe quelle plage, y compris négative.</p>
+      <h3 data-i18n="faq2-q">Puis-je utiliser des nombres négatifs ?</h3>
+      <p data-i18n="faq2-a">Oui, l'outil accepte n'importe quelle plage, y compris négative.</p>
     </div>
     <div class="faq-item">
-      <h3>Est-ce gratuit et sans inscription ?</h3>
-      <p>Oui, entièrement gratuit, aucun compte à créer, tout se passe dans votre navigateur.</p>
+      <h3 data-i18n="faq3-q">Est-ce gratuit et sans inscription ?</h3>
+      <p data-i18n="faq3-a">Oui, entièrement gratuit, aucun compte à créer, tout se passe dans votre navigateur.</p>
     </div>
   </section>
 </main>
@@ -125,5 +110,7 @@ function generate() {
   document.getElementById('result').textContent = n;
 }
 </script>
+<script>window.translations = {"fr": {"nav-home": "Home", "nav-tools": "Free Tools", "nav-tool1": "Pile ou Face", "nav-tool2": "Oracle Oui ou Non", "nav-tool3": "Nombre Aléatoire", "nav-guides": "Guides", "nav-blog": "Blog", "nav-about": "About", "h1": "Générateur de Nombre Aléatoire", "lede": "Choisis une plage de valeurs, obtiens un nombre aléatoire instantanément.", "lbl-min": "De", "lbl-max": "à", "btn": "Générer", "faq-h2": "Questions fréquentes", "faq1-q": "Les bornes sont-elles incluses ?", "faq1-a": "Oui, les valeurs min et max que tu saisis peuvent elles-mêmes être tirées.", "faq2-q": "Puis-je utiliser des nombres négatifs ?", "faq2-a": "Oui, l'outil accepte n'importe quelle plage, y compris négative.", "faq3-q": "Est-ce gratuit et sans inscription ?", "faq3-a": "Oui, entièrement gratuit, aucun compte à créer, tout se passe dans votre navigateur.", "_title": "Générateur de Nombre Aléatoire Gratuit | Coin Flip", "_desc": "Génère un nombre aléatoire entre deux valeurs de ton choix, gratuit et sans inscription."}, "en": {"nav-home": "Home", "nav-tools": "Free Tools", "nav-tool1": "Coin Flip", "nav-tool2": "Yes or No Oracle", "nav-tool3": "Random Number", "nav-guides": "Guides", "nav-blog": "Blog", "nav-about": "About", "h1": "Random Number Generator", "lede": "Choose a range of values, get a random number instantly.", "lbl-min": "From", "lbl-max": "to", "btn": "Generate", "faq-h2": "Frequently asked questions", "faq1-q": "Are the bounds included?", "faq1-a": "Yes, the min and max values you enter can themselves be drawn.", "faq2-q": "Can I use negative numbers?", "faq2-a": "Yes, the tool accepts any range, including negative.", "faq3-q": "Is it free and without sign-up?", "faq3-a": "Yes, completely free, no account needed, everything runs in your browser.", "_title": "Free Random Number Generator | Coin Flip", "_desc": "Generate a random number between two values of your choice, free and no sign-up."}, "es": {"nav-home": "Inicio", "nav-tools": "Herramientas Gratis", "nav-tool1": "Cara o Cruz", "nav-tool2": "Oráculo Sí o No", "nav-tool3": "Número Aleatorio", "nav-guides": "Guías", "nav-blog": "Blog", "nav-about": "Acerca de", "h1": "Generador de Número Aleatorio", "lede": "Elige un rango de valores, obtén un número aleatorio al instante.", "lbl-min": "Desde", "lbl-max": "hasta", "btn": "Generar", "faq-h2": "Preguntas frecuentes", "faq1-q": "¿Se incluyen los límites?", "faq1-a": "Sí, los valores mínimo y máximo que introduces también pueden salir sorteados.", "faq2-q": "¿Puedo usar números negativos?", "faq2-a": "Sí, la herramienta acepta cualquier rango, incluido negativo.", "faq3-q": "¿Es gratis y sin registro?", "faq3-a": "Sí, completamente gratis, sin necesidad de crear cuenta, todo ocurre en tu navegador.", "_title": "Generador Gratuito de Número Aleatorio | Cara o Cruz", "_desc": "Genera un número aleatorio entre dos valores de tu elección, gratis y sin registro."}, "pt": {"nav-home": "Início", "nav-tools": "Ferramentas Grátis", "nav-tool1": "Cara ou Coroa", "nav-tool2": "Oráculo Sim ou Não", "nav-tool3": "Número Aleatório", "nav-guides": "Guias", "nav-blog": "Blog", "nav-about": "Sobre", "h1": "Gerador de Número Aleatório", "lede": "Escolha um intervalo de valores, obtenha um número aleatório instantaneamente.", "lbl-min": "De", "lbl-max": "até", "btn": "Gerar", "faq-h2": "Perguntas frequentes", "faq1-q": "Os limites estão incluídos?", "faq1-a": "Sim, os valores mínimo e máximo que você insere também podem ser sorteados.", "faq2-q": "Posso usar números negativos?", "faq2-a": "Sim, a ferramenta aceita qualquer intervalo, incluindo negativo.", "faq3-q": "É gratuito e sem cadastro?", "faq3-a": "Sim, totalmente gratuito, sem necessidade de criar conta, tudo acontece no seu navegador.", "_title": "Gerador Gratuito de Número Aleatório | Cara ou Coroa", "_desc": "Gere um número aleatório entre dois valores de sua escolha, gratuito e sem cadastro."}, "hi": {"nav-home": "होम", "nav-tools": "मुफ़्त टूल्स", "nav-tool1": "सिक्का टॉस", "nav-tool2": "हां या ना ओरेकल", "nav-tool3": "यादृच्छिक संख्या", "nav-guides": "गाइड", "nav-blog": "ब्लॉग", "nav-about": "हमारे बारे में", "h1": "यादृच्छिक संख्या जनरेटर", "lede": "मानों की एक सीमा चुनें, तुरंत एक यादृच्छिक संख्या प्राप्त करें।", "lbl-min": "से", "lbl-max": "तक", "btn": "जनरेट करें", "faq-h2": "अक्सर पूछे जाने वाले प्रश्न", "faq1-q": "क्या सीमाएं शामिल हैं?", "faq1-a": "हां, आपके द्वारा दर्ज की गई न्यूनतम और अधिकतम मान स्वयं भी चुनी जा सकती हैं।", "faq2-q": "क्या मैं ओण संख्याओं का उपयोग कर सकता/सकती हूं?", "faq2-a": "हां, यह उपकरण ढणात्मक सहित किसी भी सीमा को स्वीकार करता है।", "faq3-q": "क्या यह मुफ़्त और बिना पंजीकरण के है?", "faq3-a": "हां, पूरी तरह मुफ़्त, किसी खाते की आवश्यकता नहीं, सब कुछ आपके ब्राउज़र में होता है।", "_title": "मुफ़्त यादृच्छिक संख्या जनरेटर | सिक्का टॉस", "_desc": "अपनी पसंद की दो सीमाओं के बीच एक यादृच्छिक संख्या उत्पन्न करें, मुफ़्त और बिना पंजीकरण के।"}, "ar": {"nav-home": "الرئيسية", "nav-tools": "أدوات مجانية", "nav-tool1": "رمي العملة", "nav-tool2": "وراقة نعم أو لा", "nav-tool3": "رقم عشوائي", "nav-guides": "أدلة", "nav-blog": "المدونة", "nav-about": "من نحن", "h1": "مولّد الأرقام العشوائية", "lede": "اختر نطاقًا من القيم، واحصل على رقم عشوائي فورًا.", "lbl-min": "من", "lbl-max": "إلى", "btn": "ولّد", "faq-h2": "الأسئلة الشائعة", "faq1-q": "هل الحدود مشمولة؟", "faq1-a": "نعم، يمكن أن تُسحب القيمتان الدنيا والعليا اللتان تدخلهما أيضًا.", "faq2-q": "هل يمكنني استخدام أرقام سالبة؟", "faq2-a": "نعم، تقبل الأداة أي نطاق، بما في ذلك السالب.", "faq3-q": "هل هي مجانية ودون تسجيل؟", "faq3-a": "نعم، مجانية بالكامل، لا حاجة لإنشاء حساب، كل شيء يتم داخل متصفحك.", "_title": "مولّد الأرقام العشوائية المجاني | رمي العملة", "_desc": "ولّد رقمًا عشوائيًا بين قيمتين من اختيارك، مجاني ودون تسجيل."}};</script>
+<script src="/i18n.js"></script>
 </body>
 </html>
