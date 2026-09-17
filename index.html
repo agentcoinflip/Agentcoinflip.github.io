@@ -122,9 +122,15 @@
   #legal-modal p { font-size: 0.88rem; color: var(--ink-soft); margin-bottom: 9px; }
   #legal-modal .close { position: absolute; top: 14px; right: 16px; background: none; border: none; font-size: 1.2rem; cursor: pointer; color: var(--ink-mute); }
 
-  [data-lang-en] { display: none; }
-  html[data-lang="en"] [data-lang-fr] { display: none; }
-  html[data-lang="en"] [data-lang-en] { display: initial; }
+  [data-lang-en], [data-lang-es], [data-lang-pt], [data-lang-hi], [data-lang-ar] { display: none; }
+  html[data-lang="en"] [data-lang-fr] { display: none; } html[data-lang="en"] [data-lang-en] { display: initial; }
+  html[data-lang="es"] [data-lang-fr] { display: none; } html[data-lang="es"] [data-lang-es] { display: initial; }
+  html[data-lang="pt"] [data-lang-fr] { display: none; } html[data-lang="pt"] [data-lang-pt] { display: initial; }
+  html[data-lang="hi"] [data-lang-fr] { display: none; } html[data-lang="hi"] [data-lang-hi] { display: initial; }
+  html[data-lang="ar"] [data-lang-fr] { display: none; } html[data-lang="ar"] [data-lang-ar] { display: initial; }
+  html[data-lang="ar"] { direction: rtl; }
+  html[data-lang="ar"] main, html[data-lang="ar"] footer { text-align: right; }
+  html[data-lang="ar"] .dropdown-panel { left: auto; right: 0; }
   nav.main-nav { display: flex; gap: 18px; }
   nav.main-nav a { color: var(--ink-soft); text-decoration: none; font-size: 0.85rem; font-weight: 600; }
   nav.main-nav a:hover, nav.main-nav a.active { color: var(--accent); }
@@ -150,9 +156,16 @@
       <a href="/blog.html">Blog</a>
       <a href="/about.html">About</a>
     </nav>
-    <div class="lang-switch">
-      <button id="btn-fr" class="active" onclick="setLang('fr')">FR</button>
-      <button id="btn-en" onclick="setLang('en')">EN</button>
+    <div class="nav-dropdown">
+      <span class="dropdown-trigger" onclick="var p=this.nextElementSibling;p.classList.toggle('open')"><span id="lang-current">FR</span> <span style="font-size:0.7em;">&#9662;</span></span>
+      <div class="dropdown-panel lang-panel">
+        <a href="#" onclick="setLang('fr');return false;">Français</a>
+        <a href="#" onclick="setLang('en');return false;">English</a>
+        <a href="#" onclick="setLang('es');return false;">Español</a>
+        <a href="#" onclick="setLang('pt');return false;">Português</a>
+        <a href="#" onclick="setLang('hi');return false;">हिन्दी</a>
+        <a href="#" onclick="setLang('ar');return false;">العربية</a>
+      </div>
     </div>
   </div>
 </header>
